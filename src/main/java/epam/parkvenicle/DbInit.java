@@ -17,8 +17,8 @@ import static epam.parkvenicle.types.TypeMass.SMALL;
 class DbInit {
 
     static void startUp(){
-        ParkVenicles parkVenicles = ParkVenicles.getInstance();
-         parkVenicles.setCars((ArrayList<? extends Car>) initializeCars());
+        ParkVehicles parkVehicles = ParkVehicles.getInstance();
+         parkVehicles.setCars((ArrayList<? extends Car>) initializeCars());
 
     }
 

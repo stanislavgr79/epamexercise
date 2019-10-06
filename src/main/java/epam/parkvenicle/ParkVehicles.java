@@ -14,22 +14,22 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-class ParkVenicles {
+class ParkVehicles {
 
     final LogicalMethods logicalMethods;
 
     private ArrayList<? extends Car> cars;
 
-    private static ParkVenicles instance;
+    private static ParkVehicles instance;
 
-    private ParkVenicles()
+    private ParkVehicles()
     {
         logicalMethods = new LogicalMethods(this);
     }
 
-    static synchronized ParkVenicles getInstance() {
+    static synchronized ParkVehicles getInstance() {
         if (instance == null) {
-            instance = new ParkVenicles();
+            instance = new ParkVehicles();
         }
         return instance;
     }

@@ -9,22 +9,22 @@ import java.util.Comparator;
 import java.util.stream.Collectors;
 
 class LogicalMethods {
-    private final ParkVenicles parkVenicles;
+    private final ParkVehicles parkVehicles;
 
-    LogicalMethods(ParkVenicles parkVenicles) {
-        this.parkVenicles = parkVenicles;
+    LogicalMethods(ParkVehicles parkVehicles) {
+        this.parkVehicles = parkVehicles;
     }
 
-    int resultOfCostAllCars(ParkVenicles parkVenicles){
+    int resultOfCostAllCars(ParkVehicles parkVehicles){
         //noinspection OptionalGetWithoutIsPresent
-        return parkVenicles.getCars().stream()
+        return parkVehicles.getCars().stream()
                 .mapToInt(Car::getCostCar)
                 .reduce(Integer::sum)
                 .getAsInt();
     }
 
-    ArrayList<Car> sortCarsByFuelSpend(ParkVenicles parkVenicles){
-        return parkVenicles.getCars()
+    ArrayList<Car> sortCarsByFuelSpend(ParkVehicles parkVehicles){
+        return parkVehicles.getCars()
                 .stream()
                 .sorted(new CarComparator.FuelSpendBy100kmComparator())
                 .collect(Collectors.toCollection(ArrayList::new));
@@ -34,14 +34,14 @@ class LogicalMethods {
         Calendar calendar = Calendar.getInstance();
         //noinspection MagicConstant
         calendar.set(yearMade, monthMade-1, dayMade);
-        return parkVenicles.getCars()
+        return parkVehicles.getCars()
                 .stream()
                 .filter(o-> o.getMadeYear().getTime() > calendar.getTime().getTime())
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
     ArrayList<Car> searchCarsByRangeThemSpeed(int lowSpeedRangeBorder, int maxSpeedRangeBorder){
-        return parkVenicles.getCars()
+        return parkVehicles.getCars()
                 .stream()
                 .filter(o-> o.getSpeedCar() >= lowSpeedRangeBorder & o.getSpeedCar() <= maxSpeedRangeBorder)
                 .sorted(Comparator.comparing(Car::getSpeedCar)
