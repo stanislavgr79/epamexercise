@@ -1,4 +1,6 @@
-package epam.parkvenicle.cars;
+package epam.parkvenicle.comparators;
+
+import epam.parkvenicle.model.cars.Car;
 
 import java.util.Comparator;
 

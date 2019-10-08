@@ -1,4 +1,4 @@
-package epam.parkvenicle.cars;
+package epam.parkvenicle.model.cars;
 
 import java.text.DateFormat;
 import java.util.Calendar;

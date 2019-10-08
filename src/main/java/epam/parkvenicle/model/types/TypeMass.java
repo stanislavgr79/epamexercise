@@ -1,4 +1,4 @@
-package epam.parkvenicle.types;
+package epam.parkvenicle.model.types;
 
 public enum TypeMass {SMALL("down 3 tons"), MEDIUM("up to 5 tons");
     private final String  MASS_CARGO;

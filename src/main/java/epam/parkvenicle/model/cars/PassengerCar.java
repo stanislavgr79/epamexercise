@@ -1,6 +1,6 @@
-package epam.parkvenicle.cars;
+package epam.parkvenicle.model.cars;
 
-import epam.parkvenicle.types.TypeCar;
+import epam.parkvenicle.model.types.TypeCar;
 
 import java.util.Objects;
 
